@@ -21,5 +21,5 @@ from .Controllers import CalendarsController, CalendarController
 urlpatterns = [
     path('', CalendarsController.get),
     path('Calendars/', CalendarsController.get),
-    path('Calendars/<str:name>/', CalendarController.get),
+    path('Calendars/<str:name>/<rangeFrom>/<rangeTo>/', CalendarController.get),
 ]
