@@ -6,8 +6,8 @@ from CalendaReporter.Controllers.CReportController import ReportController
 
 def get(request, name, rangeFrom, rangeTo):
     calendar = Calendar(name)
-    report = calendar.reportize(rangeFrom, rangeTo)
-    ore_lavorate = ReportController.countHours(report.get(), ["Lavoro", "Lavoro #smartworking"])
+    report = calendar.reportize(rangeFrom, rangeTo).get()
+    ore_lavorate = ReportController.countHours(report, ["Lavoro", "Lavoro #smartworking"])
 
     return HttpResponse(json.dumps({
         'status': 'success',
